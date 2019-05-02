@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon src/server.ts",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0"
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "dependencies": {
     "bcrypt": "^3.0.6",
