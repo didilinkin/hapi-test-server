@@ -1,0 +1,33 @@
+{
+  "name": "hapi-test-server",
+  "version": "0.0.1",
+  "description": "hapi 测试服务器",
+  "main": "src/server.js",
+  "repository": "git@github.com:didilinkin/hapi-test-server.git",
+  "author": "yanxiaodi <929213769@qq.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon src/server.ts",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "hapi": "^18.1.0",
+    "hapi-auth-basic": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^3.0.0",
+    "@types/hapi": "^18.0.2",
+    "commitizen": "^3.1.1",
+    "conventional-changelog": "^3.1.4",
+    "cz-conventional-changelog": "^2.1.0",
+    "nodemon": "^1.19.0",
+    "ts-node": "^8.1.0",
+    "typescript": "^3.4.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

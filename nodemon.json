@@ -1,0 +1,14 @@
+{
+  "restartable": "rs",
+  "ignore": [".git", ".svn", "node_modules/**/node_modules"],
+  "verbose": true,
+  "watch": ["src/**/*.ts"],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "ts",
+  "legacy-watch": true,
+  "execMap": {
+    "ts": "NODE_OPTIONS=--inspect ts-node"
+  }
+}
