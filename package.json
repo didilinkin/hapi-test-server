@@ -21,6 +21,7 @@
     "commitizen": "^3.1.1",
     "conventional-changelog": "^3.1.4",
     "cz-conventional-changelog": "^2.1.0",
+    "env2": "^2.2.2",
     "nodemon": "^1.19.0",
     "ts-node": "^8.1.0",
     "typescript": "^3.4.5"

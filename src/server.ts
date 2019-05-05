@@ -1,5 +1,10 @@
 const Hapi = require('hapi')
 const Bcrypt = require('bcrypt') // 跨平台的文件加密工具
+const routes = require('./routes')
+
+// 目录指向的是根目录
+require('env2')('./env/common.env')
+require('env2')(`./env/${process.env.NODE_ENV}.env`)
 
 // 定义一个 用户信息表
 const users = {
@@ -19,11 +24,8 @@ const validate = async (request, username, password) => {
   }
   const isValid = await Bcrypt.compare(password, user.password)
   const credentials = { id: user.id, name: user.name } // 发放证书
-  debugger
   return { isValid, credentials }
 }
-
-
 
 const start = async () => {
   const server = Hapi.server({
@@ -35,18 +37,11 @@ const start = async () => {
   // '战略' 验证
   server.auth.strategy('simple', 'basic', { validate })
 
-  server.route({
-    method: 'GET',
-    path: '/',
-    options: {
-      auth: 'simple'
-    },
-    handler: function (req, h) {
-      console.log('req ===> ', req)
-      console.log('h ===> ', h)
-      return 'Welcome!'
-    }
-  })
+  server.route([...routes])
+  console.log('env.NODE_ENV ===> ', process.env.NODE_ENV)
+  console.log('env.NAME ===> ', process.env.NAME)
+  console.log('env.ENV_NAME ===> ', process.env.ENV_NAME)
+  console.log('env.HOST ===> ', process.env.ENV_NAME)
 
   await server.start()
   console.log('Server running on %s', server.info.uri)
