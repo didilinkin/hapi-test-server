@@ -1,7 +1,5 @@
 const Joi = require('@hapi/joi')
-
 const AUTH_NAME = 'auth'
-const AUTH_TAG = 'Auth 权限'
 
 module.exports = [
   {
@@ -10,7 +8,10 @@ module.exports = [
     // options: {
     //   auth: 'simple'
     // },
-    config: {
+    options: {
+      tags: ['api', AUTH_NAME],
+      description: '登录',
+      notes: '登录 描述',
       validate: {
         // params
         // payload
@@ -18,8 +19,24 @@ module.exports = [
           authorization: Joi.string().required(),
         }).unknown(),
         query: {
-          username: Joi.string().required()
+          username: Joi.string()
+            .required()
             .description('如 john, 获取权限与路由表'),
+        },
+      },
+      plugins: {
+        'hapi-swaggered': {
+          responses: {
+            default: {
+              description: 'Bad Request',
+              schema: Joi.object({
+                msg: Joi.string()
+                  .description('Welcome!')
+                  .required(),
+              }),
+            },
+            500: { description: 'Internal Server Error' },
+          },
         },
       },
       handler: (req, reply) => {
@@ -27,42 +44,29 @@ module.exports = [
         console.log('h ===> ', reply)
         return 'Welcome!'
       },
-      plugins: {
-        'hapi-swagger': {
-          responses: {
-            '400': {
-              'description': 'BadRequest'
-            }
-          },
-          payloadType: 'form'
-        }
-      },
-      tags: ['api', AUTH_TAG],
-      description: '登录',
-      notes: '这是登录',
     },
   },
   {
     method: 'GET',
     path: `/${AUTH_NAME}/logout`,
-    config: {
+    options: {
+      plugins: {
+        'hapi-swaggered': {
+          responses: {
+            default: {
+              description: 'Bad Request',
+            },
+            500: { description: 'Internal Server Error' },
+          },
+        },
+      },
+      tags: ['api', AUTH_NAME],
+      description: '登出',
       handler: (req, reply) => {
         console.log('req ===> ', req)
         console.log('h ===> ', reply)
         return 'Bye Bye!'
       },
-      plugins: {
-        'hapi-swagger': {
-          responses: {
-            '400': {
-              'description': 'BadRequest'
-            }
-          },
-          payloadType: 'form'
-        }
-      },
-      tags: ['api', AUTH_TAG],
-      description: '登出',
     },
   },
 ]

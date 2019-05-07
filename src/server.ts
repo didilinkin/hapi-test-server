@@ -10,16 +10,6 @@ const plugins = require('./plugins')
 require('env2')('./env/common.env')
 require('env2')(`./env/${process.env.NODE_ENV}.env`)
 
-// 定义一个 用户信息表
-// const users = {
-//   john: {
-//     username: 'john',
-//     password: '$2a$10$iqJSHD.BGr0E2IxQwYgJmeP3NvhPrXAeLSaGCj6IR/XU5QtjVu5Tm',   // 'secret'
-//     name: 'John Doe',
-//     id: '2133d32a'
-//   }
-// }
-
 const start = async () => {
   const server = Hapi.server(config)
 
@@ -30,7 +20,7 @@ const start = async () => {
   console.log('Server running on %s', server.info.uri)
 }
 
-process.on('unhandledRejection', (err) => {
+process.on('unhandledRejection', err => {
   console.log(err)
   process.exit(1)
 })

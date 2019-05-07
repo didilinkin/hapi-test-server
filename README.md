@@ -32,3 +32,4 @@ Swagger 文档 - http://localhost:3000/documentation
 - [ ] view & template pug2
 - [ ] static
 - [ ] husky
+- [ ] inert => public

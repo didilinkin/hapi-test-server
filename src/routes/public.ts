@@ -1,20 +1,19 @@
 const PUBLIC_NAME = 'public'
-const PUBLIC_TAG = 'Public 静态资源'
 
 module.exports = [
   {
     method: 'GET',
-    path: '/{param*}',
-    config: {
+    path: '/public/{param*}',
+    options: {
+      tags: ['api', PUBLIC_NAME],
+      description: '资源',
+      notes: '这是资源接口',
       handler: {
         directory: {
           path: '.',
-          redirectToSlash: true
-        }
+          redirectToSlash: true,
+        },
       },
-      tags: ['api', PUBLIC_TAG],
-      description: '资源',
-      notes: '这是资源接口',
     },
   },
 ]
