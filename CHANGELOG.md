@@ -1,3 +1,12 @@
+# [0.1.0](https://github.com/didilinkin/hapi-test-server/compare/v0.0.2...v0.1.0) (2019-05-09)
+
+
+### Features
+
+* **knex.ts, server.ts, .env/*:** 配置 Knex.js + pg, 调通 local DB(PostgreSQL), 测试 CURD 通过 ([e51cec3](https://github.com/didilinkin/hapi-test-server/commit/e51cec3))
+
+
+
 ## 0.0.2 (2019-05-07)
 
 
