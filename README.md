@@ -1,12 +1,19 @@
 # hapi-test-server
 Hapi 测试服务器
-> **特别说明**: 本项目 基于 `hapi@18.1.0`, 注意查看最新版的文档, 而不是 `hapi@17`!!!
+> **特别说明**:
+>
+> 本项目 基于 `hapi@18.1.0`, 注意查看最新版的文档, 而不是 `hapi@17`!!!
+>
+> 数据库环境, 请自行配置 (PostgreSQL 最新版), 其他类型数据库不提供 帮助文档
+>
+> 请自行配置 **.env/** 文件夹, 可参考较早版本 **env/** 参考文件格式
 
 ### Tips
-Swagger 文档 - http://localhost:3000/documentation
+Swaggered 文档 - http://localhost:3000/doc
 
 ### 插件介绍
 * hapi-swagger 自动生成 Swagger - [文档](https://github.com/glennjones/hapi-swagger/blob/master/optionsreference.md)
+* hapi-swaggered 自带 swagger-ui 文档, 目前已切换至 `hapi-swaggered`
 * @hapi/basic - [文档 (项目依赖包已迁移)](https://www.npmjs.com/package/@hapi/basic)
 * Joi 校验数据机构 - [文档]()
 
@@ -27,9 +34,9 @@ Swagger 文档 - http://localhost:3000/documentation
 ### Hapi 插件收集
 
 ### Todo List
-- [ ] DB
+- [x] DB
 - [ ] DB => model
 - [ ] view & template pug2
 - [ ] static
-- [ ] husky
+- [x] husky
 - [ ] inert => public

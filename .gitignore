@@ -39,3 +39,6 @@ screenshot
 
 # doc
 .docz
+
+# .env
+.env/*

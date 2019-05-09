@@ -18,11 +18,15 @@
     "@hapi/inert": "^5.2.0",
     "@hapi/joi": "^15.0.1",
     "@hapi/vision": "^5.5.2",
+    "@sentry/node": "5.1.0",
     "bcrypt": "^3.0.6",
     "hapi-swagger": "^9.4.2",
     "hapi-swaggered": "^3.0.2",
     "hapi-swaggered-ui": "^3.0.2",
-    "path": "^0.12.7"
+    "knex": "^0.16.5",
+    "path": "^0.12.7",
+    "pg": "^7.10.0",
+    "sqlite3": "^4.0.7"
   },
   "devDependencies": {
     "@types/bcrypt": "^3.0.0",
