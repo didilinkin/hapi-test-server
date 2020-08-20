@@ -19,7 +19,7 @@
     "@hapi/joi": "^15.0.1",
     "@hapi/vision": "^5.5.2",
     "@sentry/node": "5.1.0",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "hapi-swagger": "^9.4.2",
     "hapi-swaggered": "^3.0.2",
     "hapi-swaggered-ui": "^3.0.2",
